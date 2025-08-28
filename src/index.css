@@ -7,7 +7,9 @@
 /* AthenaVault Design System - The Wisdom Vault */
 
 @layer base {
-  :root {
+  /* Modern Dark Theme (Default) */
+  :root,
+  .modern-dark {
     /* Core Backgrounds - Cozy dark theme */
     --background: 220 15% 8%;
     --foreground: 220 15% 95%;
@@ -79,7 +81,136 @@
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
-}
+
+  /* Retro Terminal Theme */
+  .retro-terminal {
+    /* Terminal green on black */
+    --background: 120 100% 2%;
+    --foreground: 120 100% 85%;
+    
+    /* Terminal surfaces */
+    --card: 120 50% 5%;
+    --card-foreground: 120 100% 85%;
+    --card-hover: 120 50% 8%;
+    
+    --popover: 120 50% 5%;
+    --popover-foreground: 120 100% 85%;
+    
+    /* Terminal green theme */
+    --primary: 120 100% 50%;
+    --primary-foreground: 120 100% 2%;
+    --primary-glow: 120 100% 60%;
+    
+    --wisdom-gold: 120 100% 70%;
+    --wisdom-gold-foreground: 120 100% 2%;
+    
+    /* Terminal secondary */
+    --secondary: 120 30% 10%;
+    --secondary-foreground: 120 100% 80%;
+    
+    --muted: 120 30% 8%;
+    --muted-foreground: 120 50% 60%;
+    
+    --accent: 120 100% 45%;
+    --accent-foreground: 120 100% 2%;
+    
+    /* Status colors - terminal style */
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 120 100% 85%;
+    
+    --success: 120 100% 50%;
+    --success-foreground: 120 100% 2%;
+    
+    /* Terminal borders */
+    --border: 120 50% 15%;
+    --input: 120 50% 8%;
+    --ring: 120 100% 50%;
+    
+    /* Terminal sidebar */
+    --sidebar-background: 120 60% 3%;
+    --sidebar-foreground: 120 100% 80%;
+    --sidebar-primary: 120 100% 50%;
+    --sidebar-primary-foreground: 120 100% 2%;
+    --sidebar-accent: 120 40% 6%;
+    --sidebar-accent-foreground: 120 100% 85%;
+    --sidebar-border: 120 50% 12%;
+    --sidebar-ring: 120 100% 50%;
+    
+    /* Terminal gradients */
+    --gradient-wisdom: linear-gradient(135deg, hsl(120 100% 50%), hsl(120 100% 70%));
+    --gradient-hero: linear-gradient(135deg, hsl(120 100% 2%), hsl(120 50% 5%));
+    --gradient-card: linear-gradient(145deg, hsl(120 50% 5%), hsl(120 50% 7%));
+    
+    /* Terminal shadows - green glow */
+    --shadow-wisdom: 0 10px 40px -10px hsl(120 100% 50% / 0.4);
+    --shadow-card: 0 4px 20px -4px hsl(120 100% 20% / 0.3);
+    --shadow-elegant: 0 20px 60px -20px hsl(120 100% 20% / 0.5);
+  }
+
+  /* Ancient Parchment Theme */
+  .parchment {
+    /* Warm parchment colors */
+    --background: 45 30% 92%;
+    --foreground: 25 25% 15%;
+    
+    /* Parchment surfaces */
+    --card: 45 40% 88%;
+    --card-foreground: 25 25% 15%;
+    --card-hover: 45 35% 85%;
+    
+    --popover: 45 40% 88%;
+    --popover-foreground: 25 25% 15%;
+    
+    /* Wisdom brown/gold theme */
+    --primary: 25 60% 35%;
+    --primary-foreground: 45 30% 92%;
+    --primary-glow: 25 60% 45%;
+    
+    --wisdom-gold: 45 80% 50%;
+    --wisdom-gold-foreground: 25 25% 15%;
+    
+    /* Parchment secondary */
+    --secondary: 45 25% 85%;
+    --secondary-foreground: 25 25% 20%;
+    
+    --muted: 45 20% 80%;
+    --muted-foreground: 25 20% 45%;
+    
+    --accent: 25 50% 40%;
+    --accent-foreground: 45 30% 92%;
+    
+    /* Status colors - parchment style */
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 45 30% 92%;
+    
+    --success: 120 40% 40%;
+    --success-foreground: 45 30% 92%;
+    
+    /* Parchment borders */
+    --border: 45 20% 75%;
+    --input: 45 25% 85%;
+    --ring: 25 60% 35%;
+    
+    /* Parchment sidebar */
+    --sidebar-background: 45 35% 90%;
+    --sidebar-foreground: 25 25% 20%;
+    --sidebar-primary: 25 60% 35%;
+    --sidebar-primary-foreground: 45 30% 92%;
+    --sidebar-accent: 45 30% 86%;
+    --sidebar-accent-foreground: 25 25% 15%;
+    --sidebar-border: 45 25% 80%;
+    --sidebar-ring: 25 60% 35%;
+    
+    /* Parchment gradients */
+    --gradient-wisdom: linear-gradient(135deg, hsl(25 60% 35%), hsl(45 80% 50%));
+    --gradient-hero: linear-gradient(135deg, hsl(45 30% 92%), hsl(45 40% 88%));
+    --gradient-card: linear-gradient(145deg, hsl(45 40% 88%), hsl(45 35% 85%));
+    
+    /* Parchment shadows - warm brown */
+    --shadow-wisdom: 0 10px 40px -10px hsl(25 60% 35% / 0.3);
+    --shadow-card: 0 4px 20px -4px hsl(25 25% 50% / 0.2);
+    --shadow-elegant: 0 20px 60px -20px hsl(25 25% 50% / 0.4);
+  }
 
 @layer base {
   * {
@@ -92,6 +223,34 @@
   
   h1, h2, h3, h4, h5, h6 {
     @apply font-medium;
+  }
+
+  /* Terminal theme font adjustments */
+  .retro-terminal {
+    font-family: 'Courier New', 'Monaco', 'Menlo', monospace;
+  }
+
+  .retro-terminal h1,
+  .retro-terminal h2,
+  .retro-terminal h3,
+  .retro-terminal h4,
+  .retro-terminal h5,
+  .retro-terminal h6 {
+    @apply font-bold tracking-wider;
+  }
+
+  /* Parchment theme font adjustments */
+  .parchment {
+    font-family: 'Georgia', 'Times New Roman', serif;
+  }
+
+  .parchment h1,
+  .parchment h2,
+  .parchment h3,
+  .parchment h4,
+  .parchment h5,
+  .parchment h6 {
+    @apply font-semibold;
   }
 }
 
@@ -114,5 +273,15 @@
   
   .gradient-card {
     background: var(--gradient-card);
+  }
+
+  /* Terminal theme effects */
+  .retro-terminal .book-card-hover {
+    @apply hover:shadow-[0_0_20px_hsl(120_100%_50%_/_0.5)] hover:scale-[1.02];
+  }
+
+  /* Parchment theme effects */
+  .parchment .book-card-hover {
+    @apply hover:shadow-[0_8px_25px_hsl(25_25%_50%_/_0.3)] hover:scale-[1.02];
   }
 }
