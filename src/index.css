@@ -211,6 +211,7 @@
     --shadow-card: 0 4px 20px -4px hsl(25 25% 50% / 0.2);
     --shadow-elegant: 0 20px 60px -20px hsl(25 25% 50% / 0.4);
   }
+}
 
 @layer base {
   * {
