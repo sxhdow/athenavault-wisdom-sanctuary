@@ -1,9 +1,10 @@
 import { useState } from "react"
 import { BookCard } from "@/components/BookCard"
 import { SearchBar } from "@/components/SearchBar"
+import { CategoryFilter } from "@/components/CategoryFilter"
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Grid, List, Filter, Plus } from "lucide-react"
+import { Grid, List, Plus, Download } from "lucide-react"
 
 // Sample data
 import sampleBook1 from "@/assets/sample-book-1.jpg"
@@ -83,30 +84,41 @@ export default function Library() {
   })
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       {/* Header */}
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-3xl font-bold text-foreground">Your Library</h1>
-          <p className="text-muted-foreground mt-1">{filteredBooks.length} books in your collection</p>
+      <div className="text-center space-y-4">
+        <h1 className="text-4xl font-bold text-foreground">Your Personal Library</h1>
+        <p className="text-lg text-muted-foreground">Discover wisdom in your collection of {filteredBooks.length} books</p>
+        
+        {/* Search Bar - Prominent */}
+        <div className="max-w-2xl mx-auto">
+          <SearchBar 
+            value={searchQuery}
+            onChange={setSearchQuery}
+            placeholder="Search for books, authors, wisdom..."
+            className="w-full"
+          />
         </div>
-        <Button variant="wisdom" className="gap-2">
-          <Plus className="w-4 h-4" />
-          Import Books
-        </Button>
       </div>
 
-      {/* Controls */}
-      <div className="flex flex-col sm:flex-row gap-4">
-        <SearchBar 
-          value={searchQuery}
-          onChange={setSearchQuery}
-          className="flex-1"
+      {/* Category Filter */}
+      <div className="space-y-4">
+        <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">Browse by Category</h3>
+        <CategoryFilter 
+          selectedCategory={filterBy}
+          onCategoryChange={setFilterBy}
         />
-        
-        <div className="flex gap-2">
+      </div>
+
+      {/* Controls Bar */}
+      <div className="flex items-center justify-between bg-card/50 rounded-xl p-4 border border-border/50">
+        <div className="flex items-center gap-4">
+          <p className="text-sm text-muted-foreground">
+            {filteredBooks.length} books {filterBy !== "all" && `in ${filterBy}`}
+          </p>
+          
           <Select value={sortBy} onValueChange={setSortBy}>
-            <SelectTrigger className="w-40">
+            <SelectTrigger className="w-40 bg-background">
               <SelectValue placeholder="Sort by" />
             </SelectTrigger>
             <SelectContent>
@@ -116,21 +128,15 @@ export default function Library() {
               <SelectItem value="progress">Progress</SelectItem>
             </SelectContent>
           </Select>
+        </div>
 
-          <Select value={filterBy} onValueChange={setFilterBy}>
-            <SelectTrigger className="w-40">
-              <SelectValue placeholder="Filter by" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="all">All Genres</SelectItem>
-              <SelectItem value="Philosophy">Philosophy</SelectItem>
-              <SelectItem value="Literature">Literature</SelectItem>
-              <SelectItem value="Technology">Technology</SelectItem>
-              <SelectItem value="Writing">Writing</SelectItem>
-            </SelectContent>
-          </Select>
-
-          <div className="flex border border-border rounded-lg p-1">
+        <div className="flex items-center gap-2">
+          <Button variant="outline" className="gap-2">
+            <Download className="w-4 h-4" />
+            Import Books
+          </Button>
+          
+          <div className="flex border border-border rounded-lg p-1 bg-background">
             <Button 
               variant={viewMode === "grid" ? "default" : "ghost"}
               size="icon"

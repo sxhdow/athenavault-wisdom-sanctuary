@@ -10,20 +10,20 @@ interface SearchBarProps {
 }
 
 export function SearchBar({ 
-  placeholder = "Search books, authors, notes...", 
+  placeholder = "Search for books, authors, wisdom...", 
   value, 
   onChange,
   className 
 }: SearchBarProps) {
   return (
     <div className={cn("relative", className)}>
-      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
+      <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5" />
       <Input
         type="text"
         placeholder={placeholder}
         value={value}
         onChange={(e) => onChange?.(e.target.value)}
-        className="pl-10 bg-card border-border focus:border-primary/50 focus:ring-primary/20"
+        className="pl-12 pr-4 py-3 bg-card border-border focus:border-primary/50 focus:ring-primary/20 text-base placeholder:text-muted-foreground/70 rounded-xl shadow-sm"
       />
     </div>
   )

@@ -8,72 +8,73 @@
 
 @layer base {
   :root {
-    /* Core Backgrounds - Cozy dark theme */
-    --background: 220 15% 8%;
-    --foreground: 220 15% 95%;
+    /* Core Backgrounds - Warm cozy theme inspired by book interfaces */
+    --background: 35 25% 96%;
+    --foreground: 25 15% 15%;
     
-    /* Surfaces */
-    --card: 220 15% 12%;
-    --card-foreground: 220 15% 95%;
-    --card-hover: 220 15% 16%;
+    /* Surfaces with warm undertones */
+    --card: 35 30% 98%;
+    --card-foreground: 25 15% 15%;
+    --card-hover: 35 25% 94%;
     
     /* Interactive elements */
-    --popover: 220 15% 12%;
-    --popover-foreground: 220 15% 95%;
+    --popover: 35 30% 98%;
+    --popover-foreground: 25 15% 15%;
     
-    /* Wisdom theme colors */
-    --primary: 220 80% 60%;
-    --primary-foreground: 220 15% 95%;
-    --primary-glow: 220 80% 70%;
+    /* Warm wisdom colors */
+    --primary: 25 60% 45%;
+    --primary-foreground: 35 25% 96%;
+    --primary-glow: 25 70% 55%;
     
-    --wisdom-gold: 45 90% 65%;
-    --wisdom-gold-foreground: 220 15% 8%;
+    --wisdom-gold: 45 85% 50%;
+    --wisdom-gold-foreground: 25 15% 15%;
     
     /* Secondary surfaces */
-    --secondary: 220 15% 20%;
-    --secondary-foreground: 220 15% 90%;
+    --secondary: 35 20% 90%;
+    --secondary-foreground: 25 15% 25%;
     
     /* Muted elements */
-    --muted: 220 15% 16%;
-    --muted-foreground: 220 15% 65%;
+    --muted: 35 20% 88%;
+    --muted-foreground: 25 10% 50%;
     
     /* Accent for highlights */
-    --accent: 220 80% 55%;
-    --accent-foreground: 220 15% 95%;
+    --accent: 15 70% 60%;
+    --accent-foreground: 35 25% 96%;
     
     /* Status colors */
     --destructive: 0 70% 55%;
-    --destructive-foreground: 220 15% 95%;
+    --destructive-foreground: 35 25% 96%;
     
-    --success: 142 70% 50%;
-    --success-foreground: 220 15% 95%;
+    --success: 130 60% 45%;
+    --success-foreground: 35 25% 96%;
     
     /* Borders and inputs */
-    --border: 220 15% 20%;
-    --input: 220 15% 16%;
-    --ring: 220 80% 60%;
+    --border: 35 15% 85%;
+    --input: 35 20% 88%;
+    --ring: 25 60% 45%;
     
-    /* Sidebar */
-    --sidebar-background: 220 15% 10%;
-    --sidebar-foreground: 220 15% 85%;
-    --sidebar-primary: 220 80% 60%;
-    --sidebar-primary-foreground: 220 15% 95%;
-    --sidebar-accent: 220 15% 14%;
-    --sidebar-accent-foreground: 220 15% 90%;
-    --sidebar-border: 220 15% 18%;
-    --sidebar-ring: 220 80% 60%;
+    /* Sidebar with warm tones */
+    --sidebar-background: 35 30% 98%;
+    --sidebar-foreground: 25 15% 25%;
+    --sidebar-primary: 25 60% 45%;
+    --sidebar-primary-foreground: 35 25% 96%;
+    --sidebar-accent: 35 25% 92%;
+    --sidebar-accent-foreground: 25 15% 25%;
+    --sidebar-border: 35 15% 85%;
+    --sidebar-ring: 25 60% 45%;
 
     --radius: 0.75rem;
 
-    /* Gradients */
-    --gradient-wisdom: linear-gradient(135deg, hsl(220 80% 60%), hsl(45 90% 65%));
-    --gradient-hero: linear-gradient(135deg, hsl(220 15% 8%), hsl(220 15% 16%));
-    --gradient-card: linear-gradient(145deg, hsl(220 15% 12%), hsl(220 15% 14%));
+    /* Warm gradients */
+    --gradient-wisdom: linear-gradient(135deg, hsl(25 60% 45%), hsl(45 85% 50%));
+    --gradient-hero: linear-gradient(135deg, hsl(35 25% 96%), hsl(35 20% 90%));
+    --gradient-card: linear-gradient(145deg, hsl(35 30% 98%), hsl(35 25% 94%));
+    --gradient-search: linear-gradient(135deg, hsl(15 70% 60%), hsl(45 85% 50%));
 
-    /* Shadows */
-    --shadow-wisdom: 0 10px 40px -10px hsl(220 80% 60% / 0.3);
-    --shadow-card: 0 4px 20px -4px hsl(220 15% 4% / 0.4);
-    --shadow-elegant: 0 20px 60px -20px hsl(220 15% 4% / 0.6);
+    /* Soft shadows */
+    --shadow-wisdom: 0 10px 40px -10px hsl(25 60% 45% / 0.25);
+    --shadow-card: 0 4px 20px -4px hsl(25 15% 15% / 0.08);
+    --shadow-elegant: 0 20px 60px -20px hsl(25 15% 15% / 0.12);
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);

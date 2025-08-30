@@ -49,15 +49,17 @@ const wisdomQuote = {
 export default function Dashboard() {
   return (
     <div className="space-y-8">
-      {/* Header */}
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-3xl font-bold text-foreground">Welcome back to your sanctuary</h1>
-          <p className="text-muted-foreground mt-1">Continue your journey of knowledge and wisdom</p>
+      {/* Hero Header */}
+      <div className="text-center space-y-6 py-8 gradient-hero rounded-2xl border border-border/50">
+        <div className="space-y-4">
+          <h1 className="text-4xl font-bold text-foreground">Welcome back to your sanctuary</h1>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Continue your journey of knowledge and wisdom. Your books are waiting to share their secrets.
+          </p>
         </div>
-        <Button variant="wisdom" className="gap-2">
-          <Plus className="w-4 h-4" />
-          Add Book
+        <Button size="lg" className="gap-2 shadow-lg">
+          <Plus className="w-5 h-5" />
+          Add New Book
         </Button>
       </div>
 
