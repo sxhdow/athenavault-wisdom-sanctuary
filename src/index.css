@@ -9,13 +9,13 @@
 @layer base {
   :root {
     /* Core Backgrounds - Warm cozy theme inspired by book interfaces */
-    --background: 35 25% 96%;
-    --foreground: 25 15% 15%;
+    --background: 44 18% 97%;
+    --foreground: 25 15% 12%;
     
     /* Surfaces with warm undertones */
-    --card: 35 30% 98%;
+    --card: 42 24% 99%;
     --card-foreground: 25 15% 15%;
-    --card-hover: 35 25% 94%;
+    --card-hover: 42 20% 96%;
     
     /* Interactive elements */
     --popover: 35 30% 98%;
@@ -67,8 +67,8 @@
 
     /* Warm gradients */
     --gradient-wisdom: linear-gradient(135deg, hsl(25 60% 45%), hsl(45 85% 50%));
-    --gradient-hero: linear-gradient(135deg, hsl(35 25% 96%), hsl(35 20% 90%));
-    --gradient-card: linear-gradient(145deg, hsl(35 30% 98%), hsl(35 25% 94%));
+    --gradient-hero: linear-gradient(135deg, hsl(44 18% 97%), hsl(42 24% 99%));
+    --gradient-card: linear-gradient(145deg, hsl(42 24% 99%), hsl(42 20% 96%));
     --gradient-search: linear-gradient(135deg, hsl(15 70% 60%), hsl(45 85% 50%));
 
     /* Soft shadows */

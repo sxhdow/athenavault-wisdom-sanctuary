@@ -26,14 +26,14 @@ export function BookCard({
 }: BookCardProps) {
   return (
     <div 
-      className="group cursor-pointer book-card-hover gradient-card rounded-xl p-4 border border-border/50"
+      className="group cursor-pointer book-card-hover gradient-card rounded-2xl p-6 border border-border/50 bg-card hover:shadow-2xl transition-all duration-300"
       onClick={onClick}
     >
-      <div className="relative mb-4">
+      <div className="relative mb-6">
         <img 
           src={cover} 
           alt={`${title} cover`}
-          className="w-full aspect-[3/4] object-cover rounded-lg shadow-[var(--shadow-card)]"
+          className="w-full aspect-[3/4] object-cover rounded-xl shadow-2xl group-hover:scale-105 transition-transform duration-300"
         />
         
         {/* Progress overlay */}
@@ -61,12 +61,12 @@ export function BookCard({
         )}
       </div>
 
-      <div className="space-y-2">
-        <h3 className="font-medium text-card-foreground line-clamp-2 group-hover:text-primary transition-colors">
+      <div className="space-y-3">
+        <h3 className="font-semibold text-lg text-card-foreground line-clamp-2 group-hover:text-primary transition-colors leading-tight">
           {title}
         </h3>
         
-        <p className="text-sm text-muted-foreground">
+        <p className="text-muted-foreground">
           {author}
         </p>
 

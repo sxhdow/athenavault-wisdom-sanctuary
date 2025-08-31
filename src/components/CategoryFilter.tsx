@@ -3,8 +3,9 @@ import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
 interface CategoryFilterProps {
-  selectedCategory: string
-  onCategoryChange: (category: string) => void
+  selectedCategory?: string
+  onCategoryChange?: (category: string) => void
+  className?: string
 }
 
 const categories = [
@@ -18,9 +19,13 @@ const categories = [
   { id: "Audiobooks", label: "Audio", icon: Headphones, color: "bg-green-500/10 text-green-600" },
 ]
 
-export function CategoryFilter({ selectedCategory, onCategoryChange }: CategoryFilterProps) {
+export function CategoryFilter({ 
+  selectedCategory = "all", 
+  onCategoryChange,
+  className 
+}: CategoryFilterProps) {
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className={cn("flex flex-wrap gap-2", className)}>
       {categories.map((category) => {
         const IconComponent = category.icon
         const isSelected = selectedCategory === category.id
@@ -30,7 +35,7 @@ export function CategoryFilter({ selectedCategory, onCategoryChange }: CategoryF
             key={category.id}
             variant={isSelected ? "default" : "ghost"}
             size="sm"
-            onClick={() => onCategoryChange(category.id)}
+            onClick={() => onCategoryChange?.(category.id)}
             className={cn(
               "gap-2 transition-all duration-200",
               isSelected 

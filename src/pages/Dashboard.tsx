@@ -1,8 +1,10 @@
 import { BookCard } from "@/components/BookCard"
 import { DashboardStats } from "@/components/DashboardStats"
 import { WisdomQuote } from "@/components/WisdomQuote"
+import { SearchBar } from "@/components/SearchBar"
+import { CategoryFilter } from "@/components/CategoryFilter"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Plus } from "lucide-react"
+import { ArrowRight, Plus, Search } from "lucide-react"
 
 // Sample data
 import sampleBook1 from "@/assets/sample-book-1.jpg"
@@ -48,67 +50,66 @@ const wisdomQuote = {
 
 export default function Dashboard() {
   return (
-    <div className="space-y-8">
-      {/* Hero Header */}
-      <div className="text-center space-y-6 py-8 gradient-hero rounded-2xl border border-border/50">
+    <div className="space-y-8 max-w-7xl mx-auto">
+      {/* Hero Section with Search */}
+      <div className="text-center space-y-8 py-12">
         <div className="space-y-4">
-          <h1 className="text-4xl font-bold text-foreground">Welcome back to your sanctuary</h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Continue your journey of knowledge and wisdom. Your books are waiting to share their secrets.
+          <h1 className="text-5xl font-bold text-foreground tracking-tight">
+            Discover Your Next
+            <span className="block text-primary">Great Read</span>
+          </h1>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Explore thousands of books, track your reading journey, and discover wisdom from the world's greatest minds.
           </p>
         </div>
-        <Button size="lg" className="gap-2 shadow-lg">
-          <Plus className="w-5 h-5" />
-          Add New Book
-        </Button>
+        
+        {/* Large Search Bar */}
+        <div className="max-w-2xl mx-auto">
+          <SearchBar 
+            placeholder="Search for books, authors, genres..." 
+            className="text-lg py-4"
+          />
+        </div>
+        
+        {/* Quick Categories */}
+        <CategoryFilter className="justify-center" />
       </div>
 
-      {/* Stats */}
-      <DashboardStats 
-        totalBooks={127}
-        booksRead={43}
-        currentlyReading={8}
-        favoriteBooks={15}
-      />
+      {/* Featured Books Section */}
+      <div className="space-y-8">
+        <div className="flex items-center justify-between">
+          <div>
+            <h2 className="text-3xl font-bold text-foreground">Continue Reading</h2>
+            <p className="text-muted-foreground mt-2">Pick up where you left off</p>
+          </div>
+          <Button variant="ghost" className="gap-2 text-primary text-lg">
+            View all <ArrowRight className="w-5 h-5" />
+          </Button>
+        </div>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {recentBooks.map((book) => (
+            <BookCard key={book.id} {...book} />
+          ))}
+        </div>
+      </div>
 
-      {/* Main content grid */}
+      {/* Bottom Content Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Continue Reading */}
-        <div className="lg:col-span-2 space-y-6">
-          <div className="flex items-center justify-between">
-            <h2 className="text-xl font-semibold text-foreground">Continue Reading</h2>
-            <Button variant="ghost" className="gap-2 text-primary">
-              View all <ArrowRight className="w-4 h-4" />
-            </Button>
-          </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {recentBooks.map((book) => (
-              <BookCard key={book.id} {...book} />
-            ))}
-          </div>
+        {/* Stats */}
+        <div className="lg:col-span-2">
+          <DashboardStats 
+            totalBooks={127}
+            booksRead={43}
+            currentlyReading={8}
+            favoriteBooks={15}
+          />
         </div>
 
         {/* Daily Wisdom */}
         <div className="space-y-6">
-          <h2 className="text-xl font-semibold text-foreground">Daily Wisdom</h2>
+          <h3 className="text-xl font-semibold text-foreground">Daily Wisdom</h3>
           <WisdomQuote {...wisdomQuote} />
-          
-          {/* Quick actions */}
-          <div className="space-y-3">
-            <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wide">Quick Actions</h3>
-            <div className="space-y-2">
-              <Button variant="hero" className="w-full justify-start">
-                Browse Library
-              </Button>
-              <Button variant="hero" className="w-full justify-start">
-                View Notes
-              </Button>
-              <Button variant="hero" className="w-full justify-start">
-                Search Books
-              </Button>
-            </div>
-          </div>
         </div>
       </div>
     </div>
